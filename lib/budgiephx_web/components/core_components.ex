@@ -597,6 +597,14 @@ defmodule BudgiephxWeb.CoreComponents do
     """
   end
 
+  attr :name, :string, required: true
+
+  def greet(assigns) do
+    ~H"""
+    <span name="raven">{@name}</span>
+    """
+  end
+
   ## JS Commands
 
   def show(js \\ %JS{}, selector) do

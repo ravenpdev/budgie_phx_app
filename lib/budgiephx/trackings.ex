@@ -1,11 +1,15 @@
 defmodule Budgiephx.Trackings do
   import Ecto.Query, warn: false
-  alias Budgiephx.Accounts.User
   alias Budgiephx.Repo
   alias Budgiephx.Trackings.Budget
 
-  def get_all_budgets do
+  def list_budgets do
     Repo.all(Budget)
+    |> Repo.preload(:user)
+  end
+
+  def get_budget(id) do
+    Repo.get(Budget, id)
   end
 
   def create_budget(attrs \\ %{}) do
