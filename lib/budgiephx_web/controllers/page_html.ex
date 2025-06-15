@@ -7,4 +7,18 @@ defmodule BudgiephxWeb.PageHTML do
   use BudgiephxWeb, :html
 
   embed_templates "page_html/*"
+
+  def demo(assigns) do
+    ~H"""
+    Hello!
+    """
+  end
+
+  def greet(assigns) do
+    ~H"""
+    <div>
+      Hello {assigns.name} {@lname}
+    </div>
+    """
+  end
 end

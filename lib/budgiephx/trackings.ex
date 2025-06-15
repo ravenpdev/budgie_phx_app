@@ -34,4 +34,8 @@ defmodule Budgiephx.Trackings do
     #   Repo.insert!(budget)
     # end)
   end
+
+  def change_budget(budget, attrs \\ %{}) do
+    Budget.changeset(budget, attrs)
+  end
 end

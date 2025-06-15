@@ -28,6 +28,7 @@ defmodule BudgiephxWeb.ConnCase do
       import Plug.Conn
       import Phoenix.ConnTest
       import BudgiephxWeb.ConnCase
+      import Plug.HTML, only: [html_escape: 1]
     end
   end
 
